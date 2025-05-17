@@ -57,6 +57,7 @@ export const halloweenEmojis = [
   "👽",
   "🦇",
 ];
+
 export const natureEmojis = [
   "🌲",
   "🌳",
