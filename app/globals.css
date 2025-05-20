@@ -35,6 +35,30 @@
   --theme-background-image: url('/assets/background/Underwater.jpg');
 }
 
+.underwater {
+  background-image:  url('/assets/background/Underwater.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.nature {
+  background-image:  url('/assets/background/Nature.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.snow {
+  background-image:  url('/assets/background/Snow.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.halloween {
+  background-image: url('/assets/background/Halloween.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
 /* Theme: Halloween */
 [data-theme="halloween"] {
   --theme-text: rgb(250 204 21); /* text-yellow-400 */
