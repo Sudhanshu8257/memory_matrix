@@ -1,0 +1,22 @@
+version: "3.8"  # Compose file format version, 3.8 supports many modern features
+
+services:
+  app:
+    build: .  # Build Docker image using Dockerfile in current directory
+
+    ports:
+      - "3000:3000"  # Map host port 3000 to container port 3000 so app is accessible on localhost:3000
+
+    environment:
+      NODE_ENV: development          # Set Node environment to development for live reload and debug features
+      NEXT_TELEMETRY_DISABLED: "1"  # Disable Next.js telemetry for privacy and stable builds
+      PORT: 3000                    # Port your Next.js app will listen on inside the container
+      HOSTNAME: "0.0.0.0"           # Bind server to all network interfaces for external access
+
+    volumes:
+      - ./:/app                      # Mount the current directory (your source code) into /app in the container
+      - /app/node_modules            # Anonymous volume for node_modules to avoid overwriting container dependencies with host's
+
+    command: npm run dev             # Override default Dockerfile CMD; run Next.js dev server with hot reload
+
+    restart: unless-stopped          # Restart container automatically if it crashes or Docker daemon restarts, but not if stopped manually
